@@ -1,0 +1,37 @@
+<ng-container>
+  <div class="container">
+    <div class="row" name="header" style="background-color:powderblue;">
+      <button type="button" class="btn btn-link btn-sm" (click)="navigateBack()"><-</button>
+      <span><h2 style="font-family:verdana;">{{task.name}} Task Detail</h2></span>
+    </div>
+    <!-- <hr> -->
+    <div name="body" style="font-family:verdana;">
+      <table class="table table-bordered" align="center">
+        <tr>
+          <td class="id">ID</td>
+          <td>{{task.id}}</td>
+        </tr>
+        <tr>
+          <td class="id">Name</td>
+          <td><input type="text" class="form-control" [(ngModel)]="task.name"> </td>
+        </tr>
+        <tr>
+          <td class="id">Created at</td>
+          <td>{{task.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        </tr>
+        <tr>
+          <td class="id">Due on</td>
+           <td><input type="text" class="form-control" [(ngModel)]="task.due_on"> </td>
+        </tr>
+        <tr>
+          <td class="id">Status</td>
+           <td><input type="text" class="form-control" [(ngModel)]="task.status"> </td>
+        </tr>
+      </table>
+      <div class="pull-right">
+        <button type="button" class="btn btn-warning btn-sm" (click)="updateTask()">Update</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="deleteTask()">Delete</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

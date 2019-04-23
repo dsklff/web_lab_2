@@ -1,0 +1,40 @@
+<ng-container>
+  <div class="container">
+    <div class="row" style="background-color:powderblue;">
+      <button type="button" class="btn btn-link btn-sm" (click)="navigateBack()"><-</button>
+      <span><h2 style="font-family:verdana;">Tasks for <i>{{taskList.name}}</i> Task list:</h2></span>
+    </div>
+    <!-- <hr> -->
+
+    <div style="font-family:verdana;">
+      <label>Create Task</label>
+      <hr>
+      <div class="form-group">
+        <label for="taskname">Name</label>
+        <input type="text" class="form-control" id="taskname" [(ngModel)]="taskName" placeholder="Enter the name">
+      </div>
+      <div class="form-group">
+        <label for="taskdueon">Due On</label>
+        <input type="text" class="form-control" id="taskdueon" [(ngModel)]="taskDueOn" placeholder="Enter the limit">
+      </div>
+      <div class="form-group">
+        <label for="taskstatus">Status</label>
+        <input type="text" class="form-control datepicker" id="taskstatus" [(ngModel)]="taskStatus" placeholder="Enter the status">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="createTask()">Create</button>
+    </div>
+
+    <table class="table" style="font-family:verdana;" align="center">
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Status</strong></td>
+        <td><strong>Options</strong></td>
+      </tr>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.name}}</td>
+        <td><a class="btn btn-info">{{task.status}}</a></td>
+        <td><a routerLink="/tasks/{{task.id}}/">More..</a></td>
+      </tr>
+    </table>
+  </div>
+</ng-container>

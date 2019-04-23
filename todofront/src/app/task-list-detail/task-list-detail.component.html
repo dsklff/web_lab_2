@@ -1,0 +1,25 @@
+<ng-container>
+  <div class="container">
+    <div class="row" name="header" style="background-color:powderblue;">
+      <button type="button" class="btn btn-link btn-sm" (click)="navigateBack()"><-</button>
+      <span><h2 style="font-family:verdana;"><i>{{taskList.name}}</i> Task list Detail</h2></span>
+    </div>
+    <!-- <hr> -->
+    <div name="body" style="font-family:verdana;">
+      <p>Name: <i>{{taskList.name}}</i>, ID: <i>{{taskList.id}}</i></p>
+    </div>
+    <table class="table" style="font-family:verdana;" align=center>
+      <tr>
+        <td>Name</td>
+        <td>Actions</td>
+      </tr>
+      <tr>
+        <td> <input type="text" class="form-control" [(ngModel)]="taskList.name"></td>
+        <td>
+          <button type="button" class="btn btn-warning btn-sm" (click)="updateTaskList()">Update</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteTaskList()">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</ng-container>
